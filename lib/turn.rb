@@ -5,3 +5,19 @@ def display_board(board)
   puts "-----------"
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
+
+def input_to_index (user_input)
+  user_input = user_input.to_i
+  user_input = user_input - 1
+end
+
+def valid_move? (board,index)
+  result = ""
+  position_state = position_taken?(board,index)
+  if index.between?(0,8) && position_state == false
+    result = true
+  else
+    result = false
+  end
+return result
+end
