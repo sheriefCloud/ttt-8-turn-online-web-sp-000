@@ -11,6 +11,10 @@ def input_to_index (user_input)
   user_input = user_input - 1
 end
 
+def move (board,input,player="X")
+  board[input] = player
+end
+
 def valid_move? (board,index)
   result = ""
   position_state = position_taken?(board,index)
@@ -20,4 +24,13 @@ def valid_move? (board,index)
     result = false
   end
 return result
+end
+def position_taken? (board,index)
+  index = index -1
+  if board[index] == " " || board[index] == "" || board[index] == nil
+    return false
+  elsif board[index] == "X" || board[index] == "O"
+    return true
+  end
+
 end
